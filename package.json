@@ -1,0 +1,60 @@
+{
+  "name": "n8n-nodes-runcrate",
+  "version": "0.1.2",
+  "description": "n8n community node for Runcrate: chat with open models, list GPU offers, launch GPU instances and run GPU jobs.",
+  "license": "MIT",
+  "homepage": "https://www.runcrate.ai/docs?utm_source=n8n&utm_medium=directory&utm_campaign=distribution",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runcrateai/n8n-nodes-runcrate.git"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "runcrate",
+    "gpu",
+    "inference",
+    "llm",
+    "openai-compatible",
+    "ai-agents"
+  ],
+  "author": {
+    "name": "Aeonmind LLC",
+    "email": "hello@runcrate.ai"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node lint && n8n-node build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/RuncrateApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Runcrate/Runcrate.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^21.1.0",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "bugs": {
+    "email": "hello@runcrate.ai"
+  }
+}
